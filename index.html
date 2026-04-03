@@ -1,10 +1,762 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Jacksonville Relocation Guide</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living in Jacksonville &amp; St. Johns County | Kupa Taruvinga REALTOR®</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --jax-navy: #0D2B45;
+  --jax-gold: #C8972A;
+  --jax-teal: #1D9E75;
+  --jax-sand: #F5EFE0;
+  --jax-warm: #FAF7F2;
+  --text-main: #0D2B45;
+  --text-muted: #5A6A7A;
+}
+body { font-family: 'DM Sans', sans-serif; background: var(--jax-warm); color: var(--text-main); }
+.guide { max-width: 900px; margin: 0 auto; padding: 0 0 80px; }
+
+/* HERO */
+.hero { background: var(--jax-navy); padding: 64px 40px 52px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(200,151,42,0.04) 40px, rgba(200,151,42,0.04) 41px); }
+.hero-badge { display: inline-block; background: rgba(200,151,42,0.18); color: var(--jax-gold); font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(200,151,42,0.3); margin-bottom: 20px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 46px); color: #fff; line-height: 1.15; margin-bottom: 14px; }
+.hero h1 em { color: var(--jax-gold); font-style: italic; }
+.hero p { color: rgba(255,255,255,0.68); font-size: 15px; font-weight: 300; max-width: 540px; margin: 0 auto 32px; line-height: 1.7; }
+.hero-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--jax-gold); color: #fff; font-size: 14px; font-weight: 500; padding: 13px 28px; border-radius: 30px; border: none; cursor: pointer; text-decoration: none; transition: transform 0.15s, opacity 0.15s; }
+.hero-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* NAV TABS */
+.nav-tabs { display: flex; gap: 0; background: var(--jax-navy); overflow-x: auto; scrollbar-width: none; position: sticky; top: 0; z-index: 100; }
+.nav-tabs::-webkit-scrollbar { display: none; }
+.tab-btn { flex: 1; min-width: 90px; padding: 14px 6px; background: none; border: none; color: rgba(255,255,255,0.5); font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.5px; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; }
+.tab-btn.active { color: var(--jax-gold); border-bottom-color: var(--jax-gold); background: rgba(200,151,42,0.06); }
+.tab-btn:hover:not(.active) { color: rgba(255,255,255,0.8); }
+
+/* SECTIONS */
+.section { display: none; padding: 36px 24px 0; animation: fadeIn 0.25s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.section-intro { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--jax-navy); margin-bottom: 6px; }
+.section-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.6; }
+.section-sub strong { color: var(--jax-gold); font-weight: 500; }
+
+/* CARDS GRID */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 32px; }
+.card { background: #fff; border-radius: 14px; border: 0.5px solid rgba(13,43,69,0.1); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(13,43,69,0.1); }
+.card-header { height: 7px; background: var(--jax-gold); }
+.card-header.teal { background: var(--jax-teal); }
+.card-header.navy { background: var(--jax-navy); }
+.card-header.coral { background: #D85A30; }
+.card-header.sky { background: #378ADD; }
+.card-body { padding: 18px 18px 20px; }
+.card-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 16px; }
+.card-icon.gold { background: rgba(200,151,42,0.12); }
+.card-icon.teal { background: rgba(29,158,117,0.12); }
+.card-icon.navy { background: rgba(13,43,69,0.08); }
+.card-icon.coral { background: rgba(216,90,48,0.1); }
+.card-icon.sky { background: rgba(55,138,221,0.1); }
+.card h3 { font-size: 15px; font-weight: 500; color: var(--jax-navy); margin-bottom: 6px; }
+.card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.card-tag { display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; background: rgba(200,151,42,0.1); color: var(--jax-gold); }
+.card-tag.teal { background: rgba(29,158,117,0.1); color: var(--jax-teal); }
+.card-tag.navy { background: rgba(13,43,69,0.08); color: var(--jax-navy); }
+
+/* TIP BOX */
+.tip-box { background: rgba(200,151,42,0.06); border: 1px solid rgba(200,151,42,0.25); border-radius: 12px; padding: 18px 20px; margin-bottom: 24px; display: flex; gap: 14px; align-items: flex-start; }
+.tip-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.tip-box p { font-size: 13.5px; color: var(--text-main); line-height: 1.65; }
+.tip-box strong { color: var(--jax-gold); font-weight: 500; }
+
+/* HIGHLIGHT ROW */
+.highlight-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
+.stat-pill { background: var(--jax-navy); color: #fff; border-radius: 12px; padding: 16px 14px; text-align: center; }
+.stat-pill .stat-num { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--jax-gold); display: block; line-height: 1; margin-bottom: 4px; }
+.stat-pill .stat-label { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.5px; }
+
+/* MAP + NEIGHBORHOOD LAYOUT */
+.hood-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+@media (max-width: 640px) { .hood-layout { grid-template-columns: 1fr; } }
+
+.map-container { background: #fff; border-radius: 14px; border: 0.5px solid rgba(13,43,69,0.1); padding: 16px; }
+.map-container h4 { font-size: 12px; font-weight: 500; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+
+.hood-select { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
+.hood-btn { padding: 7px 14px; border-radius: 20px; border: 1px solid rgba(13,43,69,0.2); background: #fff; font-family: 'DM Sans', sans-serif; font-size: 12px; cursor: pointer; color: var(--text-muted); transition: all 0.15s; }
+.hood-btn.active, .hood-btn:hover { background: var(--jax-navy); color: #fff; border-color: var(--jax-navy); }
+
+.hood-detail { background: #fff; border-radius: 14px; border: 0.5px solid rgba(13,43,69,0.1); padding: 22px; }
+.hood-detail h3 { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--jax-navy); margin-bottom: 4px; }
+.hood-detail .hood-type { font-size: 11px; color: var(--jax-gold); font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px; }
+.hood-detail p { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+.hood-pills { display: flex; flex-wrap: wrap; gap: 7px; }
+.hood-pill { background: var(--jax-sand); color: var(--text-main); font-size: 11px; padding: 3px 10px; border-radius: 20px; }
+
+/* SVG MAP STYLES */
+.map-region { cursor: pointer; transition: opacity 0.15s; }
+.map-region:hover { opacity: 0.8; }
+.map-region.active-region { stroke-width: 2.5 !important; }
+.map-label { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 500; fill: #fff; pointer-events: none; text-anchor: middle; }
+.map-label.dark { fill: var(--jax-navy); }
+.map-river { fill: rgba(55,138,221,0.25); stroke: rgba(55,138,221,0.5); stroke-width: 1; }
+.map-ocean { fill: rgba(55,138,221,0.15); }
+
+/* CONTACT CTA */
+.cta-band { background: var(--jax-navy); border-radius: 16px; padding: 32px 28px; text-align: center; margin: 16px 0 8px; }
+.cta-band h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: #fff; margin-bottom: 8px; }
+.cta-band p { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 20px; line-height: 1.6; }
+.cta-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.btn-gold { background: var(--jax-gold); color: #fff; padding: 12px 24px; border-radius: 30px; border: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.15s; }
+.btn-outline { background: transparent; color: rgba(255,255,255,0.8); padding: 11px 24px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.3); font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.15s; }
+.btn-gold:hover { opacity: 0.85; }
+.btn-outline:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+/* REALTOR CARD */
+.realtor-card { background: #fff; border-radius: 16px; border: 0.5px solid rgba(13,43,69,0.12); padding: 24px; display: flex; gap: 20px; align-items: flex-start; margin-bottom: 24px; }
+.realtor-avatar { width: 60px; height: 60px; border-radius: 50%; background: var(--jax-navy); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 20px; color: var(--jax-gold); flex-shrink: 0; }
+.realtor-info h3 { font-size: 16px; font-weight: 500; color: var(--jax-navy); margin-bottom: 2px; }
+.realtor-info .title { font-size: 12px; color: var(--jax-gold); font-weight: 500; letter-spacing: 0.3px; margin-bottom: 8px; }
+.realtor-info p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+/* DIVIDER */
+.divider { height: 1px; background: rgba(13,43,69,0.08); margin: 28px 0; }
+
+/* CHECK LIST */
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.check-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+.check-mark { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; min-width: 18px; border-radius: 50%; background: rgba(29,158,117,0.1); border: 1.5px solid var(--jax-teal); margin-top: 1px; }
+
+/* FOOTER */
+.site-footer { background: var(--jax-navy); color: rgba(255,255,255,0.5); text-align: center; padding: 28px 24px; font-size: 12px; line-height: 1.9; margin-top: 60px; }
+.site-footer a { color: var(--jax-gold); text-decoration: none; }
+.site-footer strong { color: rgba(255,255,255,0.85); }
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero { padding: 44px 20px 36px; }
+  .section { padding: 28px 16px 0; }
+  .realtor-card { flex-direction: column; }
+  .cta-band { padding: 28px 20px; }
+}
+</style>
 </head>
 <body>
-    <h1>Welcome to Jacksonville!</h1>
-    <p>This is your ultimate guide to relocating to Jacksonville, Florida.</p>
+<div class="guide">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">Your Local Expert Guide</div>
+    <h1>Living in <em>Jacksonville</em><br>&amp; Northeast Florida</h1>
+    <p>Everything you need to know before making your move — neighborhoods, schools, beaches, food, and the lifestyle that makes this corner of Florida truly special.</p>
+    <a href="tel:+19044669557" class="hero-cta">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4l6 5 6-5M2 4h12v9H2V4z" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      Ask Kupa Anything
+    </a>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav-tabs" id="navTabs" role="tablist" aria-label="Guide sections">
+    <button class="tab-btn active" data-tab="neighborhoods" role="tab" aria-selected="true">Neighborhoods</button>
+    <button class="tab-btn" data-tab="schools" role="tab" aria-selected="false">Schools</button>
+    <button class="tab-btn" data-tab="food" role="tab" aria-selected="false">Food &amp; Dining</button>
+    <button class="tab-btn" data-tab="beaches" role="tab" aria-selected="false">Beaches</button>
+    <button class="tab-btn" data-tab="work" role="tab" aria-selected="false">Work &amp; Economy</button>
+    <button class="tab-btn" data-tab="lifestyle" role="tab" aria-selected="false">Lifestyle</button>
+  </nav>
+
+  <!-- ===== NEIGHBORHOODS ===== -->
+  <section class="section active" id="tab-neighborhoods" role="tabpanel">
+    <p class="section-intro">Find your perfect neighborhood</p>
+    <p class="section-sub">From beachside luxury in Ponte Vedra to family-friendly master plans in Nocatee, and the charming small-town feel of Orange Park — Northeast Florida has a community for every lifestyle. <strong>Click a neighborhood on the map or the buttons below.</strong></p>
+
+    <!-- MAP + DETAIL LAYOUT -->
+    <div class="hood-layout">
+      <!-- SVG MAP -->
+      <div class="map-container">
+        <h4>Northeast Florida — Click to Explore</h4>
+        <svg id="jaxMap" viewBox="0 0 320 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+          <!-- Atlantic Ocean -->
+          <rect x="245" y="0" width="75" height="380" class="map-ocean"/>
+          <text x="270" y="50" class="map-label" style="fill:rgba(55,138,221,0.7);font-size:8px;">Atlantic</text>
+          <text x="270" y="62" class="map-label" style="fill:rgba(55,138,221,0.7);font-size:8px;">Ocean</text>
+
+          <!-- St. Johns River (simplified path through the map) -->
+          <path d="M80,380 Q95,340 100,300 Q108,260 115,230 Q125,200 140,185 Q160,170 175,165 Q190,162 200,155 Q215,145 225,130" class="map-river" stroke-width="14" fill="none"/>
+          <text x="108" y="350" class="map-label" style="fill:rgba(55,138,221,0.8);font-size:7.5px;transform:rotate(-70deg);transform-origin:108px 350px;">St. Johns River</text>
+
+          <!-- Intracoastal waterway -->
+          <path d="M240,60 Q242,120 243,180 Q244,240 244,300" stroke="rgba(55,138,221,0.35)" stroke-width="4" fill="none" stroke-dasharray="4,3"/>
+
+          <!-- ORANGE PARK (Clay County - southwest) -->
+          <polygon id="region-orangepark" points="20,280 110,280 120,310 115,350 80,380 20,380" fill="#1D9E75" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="orangepark"/>
+          <text x="62" y="332" class="map-label" style="font-size:8.5px;">Orange</text>
+          <text x="62" y="344" class="map-label" style="font-size:8.5px;">Park</text>
+
+          <!-- MANDARIN (southwest Duval) -->
+          <polygon id="region-mandarin" points="110,240 160,235 170,270 120,310 110,280" fill="#0D5C8C" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="mandarin"/>
+          <text x="136" y="270" class="map-label" style="font-size:8px;">Mandarin</text>
+
+          <!-- SOUTHSIDE / DEERWOOD -->
+          <polygon id="region-southside" points="160,190 215,185 225,220 175,230 165,225" fill="#185FA5" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="southside"/>
+          <text x="190" y="210" class="map-label" style="font-size:8px;">Southside</text>
+
+          <!-- DOWNTOWN / RIVERSIDE / AVONDALE (central) -->
+          <polygon id="region-riverside" points="130,155 175,150 175,190 130,195" fill="#C8972A" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="riverside"/>
+          <text x="152" y="170" class="map-label" style="font-size:7.5px;">Riverside/</text>
+          <text x="152" y="181" class="map-label" style="font-size:7.5px;">Avondale</text>
+
+          <!-- ARLINGTON / FORT CAROLINE (east of river, north) -->
+          <polygon id="region-arlington" points="175,130 230,120 240,155 215,165 175,165" fill="#0F6E56" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="arlington"/>
+          <text x="205" y="147" class="map-label" style="font-size:8px;">Arlington</text>
+
+          <!-- NORTHSIDE / BALDWIN -->
+          <polygon id="region-northside" points="20,140 130,130 130,160 120,200 80,210 20,210" fill="#3C3489" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="northside"/>
+          <text x="72" y="175" class="map-label" style="font-size:8px;">Northside</text>
+
+          <!-- JACKSONVILLE BEACH / NEPTUNE -->
+          <polygon id="region-jaxbeach" points="230,195 244,195 244,260 230,265 220,240 225,220" fill="#378ADD" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="jaxbeach"/>
+          <text x="235" y="230" class="map-label" style="font-size:7px;">Jax</text>
+          <text x="235" y="241" class="map-label" style="font-size:7px;">Beach</text>
+
+          <!-- PONTE VEDRA -->
+          <polygon id="region-ponte" points="230,265 244,265 244,320 230,325 220,300 225,270" fill="#C8972A" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="ponte"/>
+          <text x="234" y="298" class="map-label" style="font-size:7px;">Ponte</text>
+          <text x="234" y="309" class="map-label" style="font-size:7px;">Vedra</text>
+
+          <!-- ST. JOHNS / NOCATEE (south) -->
+          <polygon id="region-nocatee" points="120,310 220,300 225,340 180,370 120,370 115,350" fill="#B87A1A" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="nocatee"/>
+          <text x="168" y="338" class="map-label" style="font-size:8px;">St. Johns /</text>
+          <text x="168" y="350" class="map-label" style="font-size:8px;">Nocatee</text>
+
+          <!-- AMELIA ISLAND (north) -->
+          <polygon id="region-amelia" points="230,20 244,20 244,80 230,85 225,60 228,35" fill="#534AB7" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="amelia"/>
+          <text x="236" y="55" class="map-label" style="font-size:7px;">Amelia</text>
+          <text x="236" y="66" class="map-label" style="font-size:7px;">Island</text>
+
+          <!-- NASSAU / CALLAHAN (north inland) -->
+          <polygon id="region-nassau" points="20,20 230,20 228,35 225,80 175,95 130,100 80,110 20,115" fill="#444441" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="nassau"/>
+          <text x="118" y="68" class="map-label" style="font-size:8px;">Nassau County</text>
+          <text x="118" y="80" class="map-label" style="font-size:7.5px;">(Fernandina / Yulee)</text>
+
+          <!-- SAN MARCO / BAYMEADOWS -->
+          <polygon id="region-sanmarco" points="175,165 215,165 215,185 175,190" fill="#993C1D" stroke="#fff" stroke-width="1.2" class="map-region" data-hood="sanmarco"/>
+          <text x="195" y="180" class="map-label" style="font-size:7.5px;">San Marco</text>
+
+          <!-- Compass rose -->
+          <g transform="translate(28,28)">
+            <circle cx="0" cy="0" r="12" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+            <text x="0" y="-5" text-anchor="middle" style="fill:#fff;font-size:8px;font-family:'DM Sans',sans-serif;">N</text>
+            <path d="M0,-10 L2,-4 L0,-6 L-2,-4 Z" fill="#C8972A"/>
+            <path d="M0,10 L2,4 L0,6 L-2,4 Z" fill="rgba(255,255,255,0.4)"/>
+          </g>
+
+          <!-- Map legend -->
+          <g transform="translate(20,108)">
+            <rect x="0" y="0" width="70" height="22" rx="4" fill="rgba(255,255,255,0.9)" stroke="rgba(13,43,69,0.1)" stroke-width="0.5"/>
+            <rect x="5" y="6" width="8" height="8" rx="2" fill="rgba(55,138,221,0.25)" stroke="rgba(55,138,221,0.5)" stroke-width="0.7"/>
+            <text x="16" y="13" style="fill:#5A6A7A;font-size:7px;font-family:'DM Sans',sans-serif;">Water</text>
+            <line x1="38" y1="10" x2="50" y2="10" stroke="rgba(55,138,221,0.35)" stroke-width="3" stroke-dasharray="3,2"/>
+            <text x="53" y="13" style="fill:#5A6A7A;font-size:7px;font-family:'DM Sans',sans-serif;">ICW</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- DETAIL PANEL -->
+      <div>
+        <div class="hood-select" id="hoodSelect">
+          <button class="hood-btn active" data-hood="ponte">Ponte Vedra</button>
+          <button class="hood-btn" data-hood="nocatee">St. Johns / Nocatee</button>
+          <button class="hood-btn" data-hood="mandarin">Mandarin</button>
+          <button class="hood-btn" data-hood="orangepark">Orange Park</button>
+          <button class="hood-btn" data-hood="riverside">Riverside/Avondale</button>
+          <button class="hood-btn" data-hood="sanmarco">San Marco</button>
+          <button class="hood-btn" data-hood="southside">Southside</button>
+          <button class="hood-btn" data-hood="jaxbeach">Jax Beach</button>
+          <button class="hood-btn" data-hood="arlington">Arlington</button>
+          <button class="hood-btn" data-hood="northside">Northside</button>
+          <button class="hood-btn" data-hood="amelia">Amelia Island</button>
+          <button class="hood-btn" data-hood="nassau">Nassau County</button>
+        </div>
+        <div class="hood-detail" id="hoodDetail">
+          <!-- filled by JS -->
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-icon">💡</div>
+      <p>Neighborhood dynamics shift constantly — new listings, HOA changes, zoning updates, and school rezoning happen every year. <strong>A local REALTOR® like Kupa</strong> tracks these nuances daily so you make decisions on current data, not outdated online guides. <strong>It's always free to ask!</strong></p>
+    </div>
+
+    <div class="cta-band">
+      <h3>Which neighborhood is right for you?</h3>
+      <p>Every buyer's situation is unique. A quick conversation can save months of uncertainty — and help you avoid overpaying or landing in the wrong zip code.</p>
+      <div class="cta-buttons">
+        <a href="tel:+19044669557" class="btn-gold">Call Kupa — (904) 466-9557</a>
+        <a href="mailto:kupadoesrealestate@gmail.com" class="btn-outline">Send a Message</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCHOOLS ===== -->
+  <section class="section" id="tab-schools" role="tabpanel">
+    <p class="section-intro">Schools that shape futures</p>
+    <p class="section-sub">St. Johns County consistently ranks as one of the <strong>top school districts in Florida</strong> — a major reason families relocate here from across the country. Clay County schools in the Orange Park area are also highly competitive.</p>
+
+    <div class="highlight-row">
+      <div class="stat-pill"><span class="stat-num">#1</span><span class="stat-label">St. Johns County in FL</span></div>
+      <div class="stat-pill"><span class="stat-num">95%</span><span class="stat-label">Graduation Rate</span></div>
+      <div class="stat-pill"><span class="stat-num">A+</span><span class="stat-label">District Rating</span></div>
+      <div class="stat-pill"><span class="stat-num">35k+</span><span class="stat-label">Students Enrolled</span></div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-header teal"></div>
+        <div class="card-body">
+          <div class="card-icon teal">🏫</div>
+          <h3>St. Johns County Schools</h3>
+          <p>Ranked the top public school district in Florida for years. Creekside, Allen D. Nease, and Bartram Trail High Schools are perennial favorites among families relocating to Nocatee and Ponte Vedra.</p>
+          <span class="card-tag teal">Top-Rated District</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header sky"></div>
+        <div class="card-body">
+          <div class="card-icon sky">🎓</div>
+          <h3>Clay County Schools</h3>
+          <p>Serving Orange Park and Fleming Island, Clay County offers strong academics, competitive athletics, and a tight-knit community feel. Fleming Island High School is consistently rated among the best in the region.</p>
+          <span class="card-tag" style="background:rgba(55,138,221,0.1);color:#378ADD;">Orange Park Area</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body">
+          <div class="card-icon gold">📚</div>
+          <h3>Duval County Schools</h3>
+          <p>Jacksonville's public district offers magnet programs, International Baccalaureate, and STEM academies across 170+ schools citywide. Stanton College Prep is nationally recognized.</p>
+          <span class="card-tag">IB &amp; STEM Programs</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header navy"></div>
+        <div class="card-body">
+          <div class="card-icon navy">🏛️</div>
+          <h3>Private &amp; Charter Options</h3>
+          <p>Bolles School, Episcopal, and Providence School offer exceptional private education. Strong charter options like Cornerstone and Beaches Chapel dot the county.</p>
+          <span class="card-tag navy">Elite Private Schools</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-icon">🏡</div>
+      <p>School zoning boundaries matter more than people realize — <strong>a single street can separate two different school zones</strong>. Before you fall in love with a home, confirm school assignments with someone who knows the area. <strong>Kupa can walk you through this before you make an offer.</strong></p>
+    </div>
+
+    <div class="cta-band">
+      <h3>Schools are the #1 reason families choose St. Johns</h3>
+      <p>Finding a home in the right zone takes local knowledge. Kupa works this market daily and can match your family's needs to the right community.</p>
+      <div class="cta-buttons">
+        <a href="tel:+19044669557" class="btn-gold">Call (904) 466-9557</a>
+        <a href="mailto:kupadoesrealestate@gmail.com" class="btn-outline">Ask About School Zones</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOD &amp; DINING ===== -->
+  <section class="section" id="tab-food" role="tabpanel">
+    <p class="section-intro">A food scene worth moving for</p>
+    <p class="section-sub">Jacksonville's culinary landscape has exploded in recent years. From beachside seafood shacks to nationally recognized dining rooms — you'll never run out of reasons to eat out.</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-header coral"></div>
+        <div class="card-body">
+          <div class="card-icon coral">🦀</div>
+          <h3>Seafood &amp; Southern</h3>
+          <p>Salt Life Food Shack, Clark's Fish Camp, and Safe Harbor serve some of the freshest local catches. Southern BBQ thrives here — 4 Rivers Smokehouse started in this region and remains a must-visit.</p>
+          <span class="card-tag" style="background:rgba(216,90,48,0.1);color:#D85A30;">Local Favorite</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header teal"></div>
+        <div class="card-body">
+          <div class="card-icon teal">🍷</div>
+          <h3>Upscale &amp; Farm-to-Table</h3>
+          <p>Niche, Rue Saint-Marc, and bb's are Jacksonville's standout fine dining destinations. Riverside and San Marco neighborhoods are food-forward hubs drawing chefs from around the country.</p>
+          <span class="card-tag teal">Award Winning</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header sky"></div>
+        <div class="card-body">
+          <div class="card-icon sky">☕</div>
+          <h3>Cafés &amp; Brunch Culture</h3>
+          <p>Bold Bean Coffee roasts locally and has a cult following. Maple Street Biscuit Company was born right here in Jacksonville — their chicken biscuit is the stuff of local legend.</p>
+          <span class="card-tag" style="background:rgba(55,138,221,0.1);color:#378ADD;">Born in Jax</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body">
+          <div class="card-icon gold">🌮</div>
+          <h3>International Flavors</h3>
+          <p>Vietnamese, Ethiopian, Cuban, and Caribbean cuisines are all well-represented. Orange Park's Blanding Boulevard corridor has a surprising depth of casual global dining options.</p>
+          <span class="card-tag">Global Eats</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-icon">🗺️</div>
+      <p>Where you live determines which dining neighborhoods you'll frequent most. <strong>San Marco, Riverside, the Beaches, and Orange Park's Town Center</strong> each have their own culinary identity. A 5-minute conversation with Kupa can help you figure out which matches your lifestyle.</p>
+    </div>
+
+    <div class="cta-band">
+      <h3>Want to know which neighborhood fits your vibe?</h3>
+      <p>Food culture, commute, and community — Kupa can help you connect the dots and find the area that fits how you actually live day-to-day.</p>
+      <div class="cta-buttons">
+        <a href="tel:+19044669557" class="btn-gold">Talk to Kupa</a>
+        <a href="mailto:kupadoesrealestate@gmail.com" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BEACHES ===== -->
+  <section class="section" id="tab-beaches" role="tabpanel">
+    <p class="section-intro">Some of Florida's most livable beaches</p>
+    <p class="section-sub">Unlike South Florida, Jacksonville's beaches feel like community — not a tourist destination. You can actually <em>live</em> here, not just visit on weekends.</p>
+
+    <div class="highlight-row">
+      <div class="stat-pill"><span class="stat-num">22mi</span><span class="stat-label">of Atlantic Coastline</span></div>
+      <div class="stat-pill"><span class="stat-num">233</span><span class="stat-label">Sunny Days / Year</span></div>
+      <div class="stat-pill"><span class="stat-num">72°</span><span class="stat-label">Average Annual Temp</span></div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-header sky"></div>
+        <div class="card-body">
+          <div class="card-icon sky">🌊</div>
+          <h3>Jacksonville Beach</h3>
+          <p>The most urban of the Beaches communities, with a lively pier, beachside dining strip, and a walkable lifestyle. Great for younger professionals and buyers who want energy without the Miami price tag.</p>
+          <span class="card-tag" style="background:rgba(55,138,221,0.1);color:#378ADD;">Urban Beach Vibe</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header teal"></div>
+        <div class="card-body">
+          <div class="card-icon teal">🌴</div>
+          <h3>Neptune Beach</h3>
+          <p>A quieter, family-friendly beach town with a charming town center. Highly walkable, low traffic, and beloved by families who want true beach access without crowds or commercialization.</p>
+          <span class="card-tag teal">Family Favorite</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body">
+          <div class="card-icon gold">⛵</div>
+          <h3>Ponte Vedra Beach</h3>
+          <p>Where luxury meets coastline. Private beach clubs, ocean-view estates, and proximity to top-rated schools make this one of Florida's most desirable coastal addresses.</p>
+          <span class="card-tag">Luxury Coastal</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header navy"></div>
+        <div class="card-body">
+          <div class="card-icon navy">🏝️</div>
+          <h3>Amelia Island</h3>
+          <p>Just 45 minutes north, Amelia Island offers a distinctly different pace — Victorian architecture, untouched state parks, world-class resorts, and one of the most beautiful stretches of undeveloped coast in the Southeast.</p>
+          <span class="card-tag navy">Weekend Escape</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-icon">🏠</div>
+      <p>Beachside inventory moves fast — and values vary wildly by block. <strong>Ocean views vs. second-row, HOA beach access vs. deeded access</strong> — these distinctions can mean $100K+ in value difference. <strong>Talk to Kupa before you make an offer on anything coastal.</strong></p>
+    </div>
+
+    <div class="cta-band">
+      <h3>Dreaming of a beachside address?</h3>
+      <p>Kupa specializes in Jacksonville and St. Johns markets — including beachside communities where deals move fast and local knowledge makes all the difference.</p>
+      <div class="cta-buttons">
+        <a href="tel:+19044669557" class="btn-gold">Call (904) 466-9557</a>
+        <a href="mailto:kupadoesrealestate@gmail.com" class="btn-outline">Search Beach Listings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORK &amp; ECONOMY ===== -->
+  <section class="section" id="tab-work" role="tabpanel">
+    <p class="section-intro">A growing economy with real opportunity</p>
+    <p class="section-sub">Jacksonville is one of the fastest-growing metros in the Southeast — with no state income tax, a low cost of living, and expanding industry across multiple sectors.</p>
+
+    <div class="highlight-row">
+      <div class="stat-pill"><span class="stat-num">0%</span><span class="stat-label">State Income Tax (FL)</span></div>
+      <div class="stat-pill"><span class="stat-num">#7</span><span class="stat-label">US City by Land Area</span></div>
+      <div class="stat-pill"><span class="stat-num">1.6M+</span><span class="stat-label">Metro Population</span></div>
+      <div class="stat-pill"><span class="stat-num">Top 5</span><span class="stat-label">FL Business Climate</span></div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-header navy"></div>
+        <div class="card-body">
+          <div class="card-icon navy">🏦</div>
+          <h3>Financial Services</h3>
+          <p>Jacksonville is Florida's financial capital. EverBank, Fidelity National Financial, and numerous insurance companies anchor a deep financial sector employing tens of thousands.</p>
+          <span class="card-tag navy">Major Hub</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header teal"></div>
+        <div class="card-body">
+          <div class="card-icon teal">⚕️</div>
+          <h3>Healthcare &amp; Biotech</h3>
+          <p>Mayo Clinic's Southeast campus, Baptist Health, UF Health, and a growing network of specialty practices make Jacksonville a premier healthcare employment destination.</p>
+          <span class="card-tag teal">Expanding Sector</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header coral"></div>
+        <div class="card-body">
+          <div class="card-icon coral">🚢</div>
+          <h3>Port &amp; Logistics</h3>
+          <p>JAXPORT is one of the busiest vehicle-processing ports in the US. Logistics, distribution, and manufacturing continue drawing major employers to the region — including Amazon and Wayfair.</p>
+          <span class="card-tag" style="background:rgba(216,90,48,0.1);color:#D85A30;">Trade &amp; Commerce</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header sky"></div>
+        <div class="card-body">
+          <div class="card-icon sky">💻</div>
+          <h3>Tech &amp; Remote Work</h3>
+          <p>A growing tech presence, affordable housing, and no state income tax make Jax a magnet for remote workers and tech transplants from New York, DC, and California.</p>
+          <span class="card-tag" style="background:rgba(55,138,221,0.1);color:#378ADD;">Remote-Friendly</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-icon">📍</div>
+      <p>Where you work shapes where you should live. Commute patterns, proximity to JAXPORT, Mayo Clinic, or downtown — <strong>Kupa can help you map commute time against neighborhoods</strong> so you don't end up stuck in daily traffic regret on I-95 or the Buckman Bridge.</p>
+    </div>
+
+    <div class="cta-band">
+      <h3>Relocating for work? Let's find your ideal base.</h3>
+      <p>Matching your workplace to the right neighborhood is half the battle. Kupa knows the commute corridors, growth areas, and where smart buyers are planting roots right now.</p>
+      <div class="cta-buttons">
+        <a href="tel:+19044669557" class="btn-gold">Call Kupa</a>
+        <a href="mailto:kupadoesrealestate@gmail.com" class="btn-outline">Start the Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIFESTYLE ===== -->
+  <section class="section" id="tab-lifestyle" role="tabpanel">
+    <p class="section-intro">The Jacksonville lifestyle</p>
+    <p class="section-sub">Beyond the homes and stats — it's about how life feels here. And by most accounts, it feels pretty good.</p>
+
+    <ul class="check-list">
+      <li>
+        <span class="check-mark"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong style="color:var(--jax-navy);">Outdoor living year-round</strong> — The St. Johns River, Intracoastal Waterway, and Atlantic Ocean create endless recreation: kayaking, fishing, surfing, cycling, and paddleboarding.</span>
+      </li>
+      <li>
+        <span class="check-mark"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong style="color:var(--jax-navy);">Professional sports &amp; entertainment</strong> — The Jacksonville Jaguars (NFL), PGA TOUR events at TPC Sawgrass, and a thriving live music and arts scene centered in Riverside and downtown.</span>
+      </li>
+      <li>
+        <span class="check-mark"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong style="color:var(--jax-navy);">No state income tax</strong> — Florida's tax climate stretches your salary further than almost any comparable metro in the country. Especially powerful if you're relocating from NY, NJ, or CA.</span>
+      </li>
+      <li>
+        <span class="check-mark"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong style="color:var(--jax-navy);">Lower cost of living</strong> — Compared to Miami, Tampa, or Orlando, Jacksonville offers significantly more home for your dollar — especially in St. Johns County and Orange Park.</span>
+      </li>
+      <li>
+        <span class="check-mark"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong style="color:var(--jax-navy);">Faith-friendly &amp; family-centered</strong> — A strong community culture with hundreds of churches, family parks, and community events year-round — particularly in Orange Park and St. Johns County.</span>
+      </li>
+      <li>
+        <span class="check-mark"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong style="color:var(--jax-navy);">Day trips galore</strong> — St. Augustine (30 min), Amelia Island (45 min), Gainesville (1.5 hrs), and Orlando (2 hrs) make every weekend feel like a mini-vacation.</span>
+      </li>
+      <li>
+        <span class="check-mark"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong style="color:var(--jax-navy);">Orange Park — underrated gem</strong> — Across the Buckman Bridge in Clay County, Orange Park offers excellent schools, larger lots, lower taxes, and a community feel that's hard to find at this price point.</span>
+      </li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <div class="realtor-card">
+      <div class="realtor-avatar">KT</div>
+      <div class="realtor-info">
+        <h3>Kupa Taruvinga</h3>
+        <div class="title">Licensed REALTOR® · Keller Williams Atlantic Partners · Jacksonville, FL</div>
+        <p>Kupa specializes in Jacksonville, St. Johns County, and the greater Northeast Florida market — bringing a strategic, client-first approach to every transaction. Whether you're relocating, upsizing, or investing, reach out for a no-pressure conversation.</p>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <h3>Ready to call Jacksonville home?</h3>
+      <p>Every question you have about this market — from school zones to HOA fees to hidden neighborhood gems — Kupa has the answers. No pressure, just honest local expertise.</p>
+      <div class="cta-buttons">
+        <a href="tel:+19044669557" class="btn-gold">Call or Text — (904) 466-9557</a>
+        <a href="mailto:kupadoesrealestate@gmail.com" class="btn-outline">Send an Email</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <strong>Kupa Taruvinga</strong> · Licensed REALTOR® · Keller Williams Atlantic Partners<br>
+  Serving Jacksonville, St. Johns County, Orange Park &amp; Northeast Florida<br>
+  <a href="tel:+19044669557">(904) 466-9557</a> &nbsp;·&nbsp; <a href="mailto:kupadoesrealestate@gmail.com">kupadoesrealestate@gmail.com</a> &nbsp;·&nbsp; <a href="https://kupahomes.com" target="_blank" rel="noopener">kupahomes.com</a><br><br>
+  &copy; 2026 Kupa Taruvinga. All rights reserved. This guide is for informational purposes only and does not constitute legal or financial advice.
+</footer>
+
+<script>
+var hoods = {
+  ponte: {
+    name: 'Ponte Vedra Beach',
+    type: 'Coastal Luxury · St. Johns County',
+    desc: "Home to the PGA TOUR headquarters and some of Northeast Florida's most coveted real estate, Ponte Vedra offers pristine Atlantic beaches, A-rated schools, and an upscale community feel. Gated neighborhoods, golf courses, and private beach clubs define the lifestyle here.",
+    pills: ['A-rated schools','Golf & Tennis','Ocean access','TPC Sawgrass nearby','Private beach clubs']
+  },
+  nocatee: {
+    name: 'St. Johns / Nocatee',
+    type: 'Award-Winning Master Community · St. Johns County',
+    desc: "Consistently ranked one of the best-selling master-planned communities in the nation. Resort-style amenities, miles of trails, top-rated schools, and a genuine sense of community make Nocatee and the broader St. Johns area uniquely livable for families of all sizes.",
+    pills: ['Resort amenities','Water parks','Trails & parks','Top schools','Bartram Trail HS']
+  },
+  mandarin: {
+    name: 'Mandarin',
+    type: 'Established Riverside Suburb · Duval County',
+    desc: "One of Jacksonville's most established and beloved communities, nestled along the St. Johns River. Large lots, mature oaks, a rich history, and loyal long-term residents define Mandarin. Great for buyers who want character, space, and easy access to the entire metro.",
+    pills: ['St. Johns River views','Large lots','Mature trees','Established feel','Easy commute']
+  },
+  orangepark: {
+    name: 'Orange Park',
+    type: 'Value & Community · Clay County',
+    desc: "Orange Park is one of Northeast Florida's most underrated markets. Across the Buckman Bridge from Mandarin, it offers excellent Clay County schools, significantly larger lots at lower prices, a charming town center, and a tight-knit suburban community. Fleming Island, a master-planned community within Orange Park, is particularly sought-after by families.",
+    pills: ['Lower home prices','Clay County schools','Fleming Island nearby','Large lots','Family community','Town center']
+  },
+  riverside: {
+    name: 'Riverside / Avondale',
+    type: 'Historic Urban Neighborhoods · Duval County',
+    desc: "Jacksonville's most walkable and architecturally rich neighborhoods. Craftsman bungalows, brick streets, boutique restaurants, galleries, and a thriving arts scene make Riverside and Avondale the choice for buyers who want urban energy with genuine historic character.",
+    pills: ['Historic homes','Walkable','Dining & arts','Craftsman bungalows','Urban lifestyle']
+  },
+  sanmarco: {
+    name: 'San Marco',
+    type: 'Upscale Urban Village · Duval County',
+    desc: "San Marco is Jacksonville's most sophisticated urban neighborhood — a classic town square surrounded by fine dining, boutique retail, and beautifully preserved 1920s–40s homes. Sitting along the St. Johns River, it's a short drive from downtown and the beaches, making it highly desirable for professionals.",
+    pills: ['Town square','Fine dining','River views','Historic homes','Walkable']
+  },
+  southside: {
+    name: 'Southside / Deerwood',
+    type: 'Corporate Corridor · Duval County',
+    desc: "Home to Jacksonville's major corporate campuses, Deerwood and the Southside Corridor offer convenient access to financial employers, hospitals, and shopping. Baymeadows and Tinseltown nearby provide strong retail and entertainment. Popular with young professionals and transplants who prioritize commute convenience.",
+    pills: ['Corporate offices','Easy I-95 access','Shopping & dining','Newer developments','Baymeadows nearby']
+  },
+  jaxbeach: {
+    name: 'Jacksonville Beach / Neptune Beach',
+    type: 'Coastal Community · Duval County',
+    desc: "The Beaches are their own world — a collection of small coastal cities with a distinct identity from the rest of Jacksonville. Jacksonville Beach offers a lively pier district; Neptune Beach provides a quieter, family-focused town center. Both are highly walkable and deeply community-oriented.",
+    pills: ['Ocean access','Walkable town centers','Surf culture','Young professionals','Active lifestyle']
+  },
+  arlington: {
+    name: 'Arlington / Fort Caroline',
+    type: 'Established East Side · Duval County',
+    desc: "Arlington is one of Jacksonville's original suburbs, offering affordability, large lots, and easy access to the Mathews Bridge and downtown. Fort Caroline has historic significance and sits along the St. Johns River. Great for first-time buyers seeking value in Duval County.",
+    pills: ['Affordable entry price','Large lots','River access','Close to downtown','First-time buyer friendly']
+  },
+  northside: {
+    name: 'Northside / Baldwin',
+    type: 'Space & Value · Duval County',
+    desc: "Jacksonville's Northside offers the most space per dollar in the city — large parcels, newer industrial growth, and a quieter pace. While further from the beaches, it's well-connected to I-95 and I-10. Ideal for buyers who want acreage, privacy, or new construction at a lower price point.",
+    pills: ['Acreage available','Lowest prices in Duval','New construction','I-95 & I-10 access','Quiet & spacious']
+  },
+  amelia: {
+    name: 'Amelia Island / Fernandina Beach',
+    type: 'Island Living · Nassau County',
+    desc: "Just 35 miles north of downtown Jacksonville, Amelia Island is one of Florida's most beautiful and historically rich barrier islands. Victorian architecture, pristine beaches, world-class resorts like the Omni Amelia Island, and a charming downtown make this a bucket-list address for those who want true island living within commuting distance.",
+    pills: ['Island lifestyle','Historic Fernandina','Top resorts','Pristine beaches','Nassau County taxes']
+  },
+  nassau: {
+    name: 'Nassau County (Yulee / Callahan)',
+    type: 'Rural & Growing · Nassau County',
+    desc: "Nassau County is one of Florida's fastest-growing counties — driven by residents seeking land, lower taxes, and a slower pace while staying within reach of Jacksonville. Yulee is seeing explosive residential growth with new master-planned communities, while Callahan retains its rural character. No county income tax and lower property tax millage rates are major draws.",
+    pills: ['Fastest growing FL county','Larger lots & acreage','Lower taxes','New construction','Rural character']
+  }
+};
+
+function renderHood(key) {
+  var h = hoods[key];
+  if (!h) return;
+  document.getElementById('hoodDetail').innerHTML =
+    '<h3>' + h.name + '</h3>' +
+    '<div class="hood-type">' + h.type + '</div>' +
+    '<p>' + h.desc + '</p>' +
+    '<div class="hood-pills">' + h.pills.map(function(p){ return '<span class="hood-pill">' + p + '</span>'; }).join('') + '</div>';
+}
+
+// Init with ponte
+renderHood('ponte');
+
+// Hood buttons
+document.getElementById('hoodSelect').addEventListener('click', function(e) {
+  var btn = e.target.closest('.hood-btn');
+  if (!btn) return;
+  document.querySelectorAll('.hood-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  // sync map
+  document.querySelectorAll('.map-region').forEach(function(r){ r.style.strokeWidth = '1.2'; r.style.stroke = '#fff'; });
+  var mapR = document.getElementById('region-' + btn.dataset.hood);
+  if (mapR) { mapR.style.strokeWidth = '2.5'; mapR.style.stroke = '#FFD700'; }
+  renderHood(btn.dataset.hood);
+});
+
+// Map region clicks
+document.getElementById('jaxMap').addEventListener('click', function(e) {
+  var region = e.target.closest('.map-region');
+  if (!region) return;
+  var key = region.dataset.hood;
+  if (!hoods[key]) return;
+  // update buttons
+  document.querySelectorAll('.hood-btn').forEach(function(b){ b.classList.remove('active'); });
+  var matchBtn = document.querySelector('.hood-btn[data-hood="' + key + '"]');
+  if (matchBtn) { matchBtn.classList.add('active'); matchBtn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); }
+  // update map highlight
+  document.querySelectorAll('.map-region').forEach(function(r){ r.style.strokeWidth = '1.2'; r.style.stroke = '#fff'; });
+  region.style.strokeWidth = '2.5';
+  region.style.stroke = '#FFD700';
+  renderHood(key);
+});
+
+// Tab switching
+document.getElementById('navTabs').addEventListener('click', function(e) {
+  var btn = e.target.closest('.tab-btn');
+  if (!btn) return;
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  document.querySelectorAll('.section').forEach(function(s){ s.classList.remove('active'); });
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected','true');
+  var target = document.getElementById('tab-' + btn.dataset.tab);
+  if (target) target.classList.add('active');
+});
+</script>
 </body>
 </html>
